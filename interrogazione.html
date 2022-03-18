@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+      margin: 0%;  
+    }
+
+</style>
+<body>
+    <div class="container">
+        <h1>Pick a color</h1>
+        <div class="bottoni">
+            <a href="" class="botton" data-color="#ff00ff" data-colorname="red">basif</a>
+            <a href="" class="botton" data-color="#ff50ff" data-colorname="orange">asinf</a>
+            <a href="" class="botton" data-color="#ff90ff" data-colorname="purple">iasonv</a>
+            <a href="" class="botton" data-color="#ff10ff" data-colorname="black">ajonsf</a>
+        </div>
+        <div class="cambiaSfondo"></div>
+    </div>
+    <script>
+        let bottoni = document.querySelectorAll(".botton")
+        for(let i = 0; i < bottoni.length; i++){
+            let SingleButton = bottoni[i]
+            SingleButton.addEventListener('click', function(e){
+                e.preventDefault();
+                //let color = bottoni[i]
+                //let color = SingleButton.dataset.color
+                let color = e.currentTarget.dataset.color
+                console.log(color)
+                let change = document.querySelector(".cambiaSfondo")
+                change.style.backgroundColor = color
+                let name = e.currentTarget.dataset.colorname
+                console.log(name)
+                change.innerHTML = name
+                
+            })
+        }
+    </script>
+</body>
+</html>
